@@ -7,15 +7,14 @@
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::blog.blog', ({ strapi }) => ({
-    async findOne(ctx) {
+    async findOne(ctx, params) {
         // Obtener el slug desde los parámetros de la consulta
-        const { slug } = ctx.params;
-        console.log(slug)
+        const { slug } = params;
         console.log("")
         console.log("")
         console.log("")
         console.log("")
-        console.error(ctx)
+        console.error(params)
         console.log("")
         console.log("")
         console.log("")
