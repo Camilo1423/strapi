@@ -14,7 +14,7 @@ module.exports = createCoreController('api::blog.blog', ({ strapi }) => ({
         // Utilizar findMany con un filtro para buscar por slug
         const entities = await strapi.entityService.findMany('api::blog.blog', {
             filters: { slug },
-            ...this.getFetchParams(ctx.query),
+            ...ctx.query, // Pasar los parámetros de consulta directamente
         });
 
         // Manejar el caso de no encontrar resultados o encontrar más de uno
