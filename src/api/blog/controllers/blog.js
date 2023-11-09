@@ -10,9 +10,19 @@ module.exports = createCoreController('api::blog.blog', ({ strapi }) => ({
     async findOne(ctx) {
         // Obtener el slug desde los parámetros de la consulta
         const { slug } = ctx.params;
+        console.log(slug)
+        console.log("")
+        console.log("")
+        console.log("")
+        console.log("")
+        console.error(ctx)
+        console.log("")
+        console.log("")
+        console.log("")
+        console.log("")
 
         // Utilizar findMany con un filtro para buscar por slug
-        const entities = await strapi.entityService.findMany('api::blog.blog', {
+        const entities = await strapi.entityService.findOne('api::blog.blog', {
             filters: { slug },
             ...ctx.query, // Pasar los parámetros de consulta directamente
         });
